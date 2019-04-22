@@ -1,12 +1,10 @@
-# Improving Adversarial Robustness via Promoting Ensemble Diversity
+# Adaptive Diversity Promoting Regularization
 
-This repository contains the codes for reproducing most of the results of our ICML submission with **paper ID: 331**.
+The adaptive diversity promoting (ADP) method is used to enhance the adversarial robustness of ensemble models. This repository contains the codes for reproducing most of the results proposed in our paper, detailed in:
 
-Paper Tittle:
+[Improving Adversarial Robustness via Promoting Ensemble Diversity](https://arxiv.org/pdf/1901.08846.pdf) (ICML 2019)
 
-***Improving Adversarial Robustness via Promoting Ensemble Diversity***
-
-Anonymous authors
+Tianyu Pang, Kun Xu, Chao Du, Ning Chen and Jun Zhu
 
 ## Environment settings and libraries we used in our experiments
 
