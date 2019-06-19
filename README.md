@@ -19,7 +19,7 @@ This project is tested under the following environment settings:
 
 We also thank the authors of [keras-resnet](https://github.com/raghakot/keras-resnet) for providing their code. Our codes are widely adapted from their repositories.
 
-**Our evaluation is based on cleverhans: 2.1.0. To perform reasonable attacks, please maually modify the command** ```new_image = tf.clip_by_value(input_image + clipped_perturbation, 0, 1)``` **to** ```new_image = tf.clip_by_value(input_image + clipped_perturbation, -0.6, 0.6)``` **in** ```_project_perturbation```**, because we substract pixel mean on inputs.**
+**Our evaluation is based on cleverhans: 2.1.0. To perform reasonable attacks, please maually modify the command** ```new_image = tf.clip_by_value(input_image + clipped_perturbation, 0, 1)``` **to** ```new_image = tf.clip_by_value(input_image + clipped_perturbation, -0.6, 0.6)``` **in** ```_project_perturbation``` **of the file** ```attacks_tf.py```, **because we substract pixel mean on inputs.**
 
 
 In the following, we first provide the codes for training our proposed methods and baselines. After that, the evaluation codes, such as attacking, are provided.
