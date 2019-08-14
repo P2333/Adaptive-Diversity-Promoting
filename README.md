@@ -65,6 +65,12 @@ The models used in Table 4 can be reproduced.
 
 ## Evaluation codes
 
+The pretrained models are provided for the ensemble of three Resnet-20v1: 
+
+[ADP for 3 models (CIFAR-10)](http://ml.cs.tsinghua.edu.cn/~tianyu/ADP/pretrained_models/ADP_standard_3networks/cifar10_ResNet20v1_model.159.h5)
+
+[ADP with adversarial training for 3 models (CIFAR-10)](http://ml.cs.tsinghua.edu.cn/~tianyu/ADP/pretrained_models/ADP_with_PGDtrain_3networks/cifar10_ResNet20v1_model.124.h5).
+
 ### Test in the normal setting
 ```shell
 python -u test_[dataset1]_iterative.py --lamda=[alpha_value] --log_det_lamda=[beta_value] --num_models=3 --augmentation=True --epoch=[checkpoint_epoch] --baseline_epoch=[checkpoint_baseline_epoch] --dataset=[dataset2] --eps=0
