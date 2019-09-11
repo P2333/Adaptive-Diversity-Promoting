@@ -91,9 +91,13 @@ def Loss_withEE_DPP(y_true, y_pred, num_model=FLAGS.num_models):
     CE_all = 0
     for i in range(num_model):
         CE_all += keras.losses.categorical_crossentropy(y_t[i], y_p[i])
-    EE = Ensemble_Entropy(y_true, y_pred, num_model)
-    log_dets = log_det(y_true, y_pred, num_model)
-    return CE_all - FLAGS.lamda * EE - FLAGS.log_det_lamda * log_dets
+    if FLAGS.lamda==0 and FLAGS.log_det_lamda==0:
+        print('This is original ECE!')
+        return CE_all
+    else:
+        EE = Ensemble_Entropy(y_true, y_pred, num_model)
+        log_dets = log_det(y_true, y_pred, num_model)
+        return CE_all - FLAGS.lamda * EE - FLAGS.log_det_lamda * log_dets
 
 
 ## Eval ##
