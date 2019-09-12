@@ -24,7 +24,7 @@ epochs = 200
 subtract_pixel_mean = True
 
 # Computed depth from supplied model parameter n
-n = 3
+n = 5
 depth = n * 6 + 2
 version = 1
 
