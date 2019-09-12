@@ -74,14 +74,21 @@ def log_det_metric(y_true, y_pred, num_model=FLAGS.num_models):
     log_dets = log_det(y_true, y_pred, num_model=num_model)
     return K.mean(log_dets)
 
+# # Average acc for each individual network
+# def acc_metric(y_true, y_pred, num_model=FLAGS.num_models):
+#     y_p = tf.split(y_pred, num_model, axis=-1)
+#     y_t = tf.split(y_true, num_model, axis=-1)
+#     acc = 0
+#     for i in range(num_model):
+#         acc += keras.metrics.categorical_accuracy(y_t[i], y_p[i])
+#     return acc / num_model
+
+# Acc of the ensemble model
 def acc_metric(y_true, y_pred, num_model=FLAGS.num_models):
     y_p = tf.split(y_pred, num_model, axis=-1)
     y_t = tf.split(y_true, num_model, axis=-1)
-    acc = 0
-    for i in range(num_model):
-        acc += keras.metrics.categorical_accuracy(y_t[i], y_p[i])
-    return acc / num_model
-
+    ens_p = tf.reduce_mean(y_p, axis=0)
+    return keras.metrics.categorical_accuracy(y_t[0], ens_p)
 
 ## Loss ##
 def Loss_withEE_DPP(y_true, y_pred, num_model=FLAGS.num_models):
