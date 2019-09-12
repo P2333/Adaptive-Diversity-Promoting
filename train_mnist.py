@@ -24,7 +24,7 @@ epochs = 40
 subtract_pixel_mean = True
 
 # Computed depth from supplied model parameter n
-n = 3
+n = 5
 depth = n * 6 + 2
 version = 1
 
@@ -68,9 +68,7 @@ def lr_schedule(epoch):
         lr (float32): learning rate
     """
     lr = 1e-3
-    if epoch > 40:
-        lr *= 1e-3
-    elif epoch > 30:
+    if epoch > 30:
         lr *= 1e-2
     elif epoch > 15:
         lr *= 1e-1
