@@ -18,7 +18,7 @@ from utils import *
 
 
 # Training parameters
-epochs = 180
+epochs = 200
 
 # Subtracting pixel mean improves accuracy
 subtract_pixel_mean = True
@@ -69,11 +69,9 @@ def lr_schedule(epoch):
         lr (float32): learning rate
     """
     lr = 1e-3
-    if epoch > 160:
-        lr *= 1e-3
-    elif epoch > 120:
+    if epoch > 150:
         lr *= 1e-2
-    elif epoch > 80:
+    elif epoch > 100:
         lr *= 1e-1
     print('Learning rate: ', lr)
     return lr
