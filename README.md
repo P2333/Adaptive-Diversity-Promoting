@@ -6,10 +6,6 @@ The adaptive diversity promoting (ADP) method is used to enhance the adversarial
 
 Tianyu Pang, Kun Xu, Chao Du, Ning Chen and Jun Zhu
 
-## News
-
-An updated version of code with better performance and written in PyTorch will be released soon.
-
 ## Environment settings and libraries we used in our experiments
 
 This project is tested under the following environment settings:
