@@ -137,7 +137,7 @@ def adv_EEDPP(_y_true, _y_pred):
 def _Loss_withEE_DPP(y_true,
                     y_pred,
                     num_model=FLAGS.num_models,
-                    label_smooth=FLAGS.label_smooth):
+                    label_smooth=1):
 
     scale = (1 - label_smooth) / (num_classes * label_smooth - 1)
     y_t_ls = scale * tf.ones_like(y_true) + y_true
